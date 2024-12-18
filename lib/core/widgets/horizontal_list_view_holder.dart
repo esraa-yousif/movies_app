@@ -4,10 +4,10 @@ import 'package:movies_app/core/utils/theme_app.dart';
 class HorizontalListViewHolder extends StatelessWidget {
   const HorizontalListViewHolder({
     super.key,
-    required this.child,
+    required this.children,
     required this.title,
   });
-  final Widget child;
+  final List<Widget> children;
   final String title;
 
   @override
@@ -33,16 +33,7 @@ class HorizontalListViewHolder extends StatelessWidget {
           ),
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
-            child: Row(
-              children: List.generate(
-                5,
-                (index) => Padding(
-                  padding: EdgeInsets.only(
-                      left: index == 0 ? 20 : 0, right: index == 4 ? 20 : 14),
-                  child: child,
-                ),
-              ),
-            ),
+            child: Row(children: children),
           ),
         ],
       ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:movies_app/core/models/movie_model.dart';
+import 'package:movies_app/core/utils/constants.dart';
 import 'package:movies_app/core/utils/theme_app.dart';
 
 class MovieCategories extends StatelessWidget {
@@ -15,7 +16,7 @@ class MovieCategories extends StatelessWidget {
     return GridView.builder(
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
-      itemCount: movieModel.movieCategories.length,
+      itemCount: movieModel.genreIds.length,
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 3,
         childAspectRatio: 2.6,
@@ -32,9 +33,16 @@ class MovieCategories extends StatelessWidget {
             borderRadius: BorderRadius.circular(4),
           ),
           child: Center(
-            child: Text(
-              movieModel.movieCategories[index],
-              style: AppTextStyles.interRegular10,
+            child: FittedBox(
+              child: Text(
+                movieModel.genreIds
+                    .map((id) => categories
+                        .firstWhere((genre) => genre['id'] == id)['name'])
+                    .toList()[index],
+                style: AppTextStyles.interRegular10,
+                overflow: TextOverflow.ellipsis,
+                maxLines: 1,
+              ),
             ),
           ),
         );

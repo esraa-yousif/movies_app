@@ -1,22 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movies_app/core/models/movie_model.dart';
 import 'package:movies_app/core/utils/theme_app.dart';
+import 'package:movies_app/features/watchlist/presentation/view_model/watchlist_cubit/watchlist_cubit.dart';
 import 'package:movies_app/features/watchlist/presentation/views/widgets/no_watch_list_movies.dart';
 import 'package:movies_app/features/watchlist/presentation/views/widgets/watch_list_view_builder.dart';
 
 class WatchlistView extends StatelessWidget {
   const WatchlistView({super.key});
-  static const List<MovieModel> movieModels = [
-    // MovieModel(
-    //   name: 'Alita Battle Angel',
-    //   date: '2019',
-    //   image: 'assets/movie_item.png',
-    //   rate: 0,
-    //   description: '',
-    //   video: '',
-    //   cast: 'Rosa Salazar, Christoph Waltz',
-    // )
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -33,11 +24,14 @@ class WatchlistView extends StatelessWidget {
             height: 20,
           ),
           Expanded(
-            child: Builder(builder: (context) {
+            child: BlocBuilder<WatchlistCubit, WatchlistState>(
+                builder: (context, state) {
+              final List<MovieModel> movieModels =
+                  context.read<WatchlistCubit>().watchListMovies;
               if (movieModels.isEmpty) {
                 return const Center(child: NoWatchListMovies());
               } else {
-                return const WatchListViewBuilder(movieModels: movieModels);
+                return WatchListViewBuilder(movieModels: movieModels);
               }
             }),
           ),

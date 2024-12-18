@@ -19,6 +19,8 @@ class AppColors {
   static const Color greenAccent = Color(0xFF48CFAD); // 48CFAD
   static const Color darkCharcoal = Color(0xFF1D1E1D); // 1D1E1D
   static const Color amber = Color(0xFFFFB224); // FFB224
+
+  // ignore_for_file: deprecated_member_use
   static Color black16 = const Color(0xff000000).withOpacity(0.161);
   static Color black91 = const Color(0xff000000).withOpacity(0.91);
   static Color black53 = const Color(0xff000000).withOpacity(0.533);

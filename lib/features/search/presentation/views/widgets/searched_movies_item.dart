@@ -13,7 +13,7 @@ class SearchedMoviesItem extends StatelessWidget {
     return Row(
       children: [
         Image.asset(
-          movieModel.image,
+          movieModel.posterPath,
           width: SizeConfig.getMovieItemSize().width,
           height: SizeConfig.getMovieItemSize().height,
           fit: BoxFit.fill,

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movies_app/core/utils/theme_app.dart';
 import 'package:movies_app/core/widgets/app_bottom_navigation_bar.dart';
-import 'package:movies_app/features/home/presentation/view_model/cubit/home_cubit.dart';
+import 'package:movies_app/features/home/presentation/view_model/home_cubit/home_cubit.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});

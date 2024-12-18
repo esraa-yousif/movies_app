@@ -15,7 +15,7 @@ class MovieDetailsView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(movieModel.name),
+        title: Text(movieModel.title),
         centerTitle: true,
         backgroundColor: AppColors.darkCharcoal,
         systemOverlayStyle: const SystemUiOverlayStyle(

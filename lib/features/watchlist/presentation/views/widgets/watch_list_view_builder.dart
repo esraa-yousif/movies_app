@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:movies_app/core/models/movie_model.dart';
-import 'package:movies_app/core/widgets/image_holder.dart';
 import 'package:movies_app/core/widgets/movie_item.dart';
 
 class WatchListViewBuilder extends StatelessWidget {
@@ -18,18 +17,8 @@ class WatchListViewBuilder extends StatelessWidget {
       child: ListView.builder(
           itemCount: movieModels.length,
           itemBuilder: (context, index) {
-            return Stack(
-              children: [
-                MovieItem(
-                  movieModel: movieModels[index],
-                ),
-                const Positioned(
-                  left: 8,
-                  child: ImageHolder(
-                    'assets/bookmarked.png',
-                  ),
-                ),
-              ],
+            return MovieItem(
+              movieModel: movieModels[index],
             );
           }),
     );

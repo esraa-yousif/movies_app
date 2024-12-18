@@ -3,15 +3,14 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:movies_app/core/utils/theme_app.dart';
 
 class SearchItem extends StatelessWidget {
-  const SearchItem({
-    super.key,
-  });
-
+  const SearchItem({super.key, required this.onChanged});
+  final void Function(String)? onChanged;
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8),
       child: SearchBar(
+        onChanged: onChanged,
         backgroundColor: const WidgetStatePropertyAll(AppColors.mediumGray),
         padding: const WidgetStatePropertyAll(
           EdgeInsets.symmetric(

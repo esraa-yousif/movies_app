@@ -17,7 +17,7 @@ class MovieVideoHeader extends StatelessWidget {
       alignment: Alignment.center,
       children: [
         ImageHolder(
-          movieModel.video,
+          movieModel.backdropPath,
           width: SizeConfig.getHeaderSize().width,
           height: SizeConfig.getHeaderSize().height,
         ),

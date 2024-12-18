@@ -3,7 +3,7 @@ import 'package:movies_app/core/models/movie_model.dart';
 import 'package:movies_app/core/utils/size_config.dart';
 import 'package:movies_app/core/utils/theme_app.dart';
 import 'package:movies_app/core/widgets/movie_video_header.dart';
-import 'package:movies_app/features/home/presentation/views/widgets/movie_poster.dart';
+import 'package:movies_app/core/widgets/movie_poster.dart';
 
 class HomeHeader extends StatelessWidget {
   const HomeHeader({
@@ -41,14 +41,14 @@ class HomeHeader extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    movieModel.name,
+                    movieModel.title,
                     style: AppTextStyles.interRegular14,
                   ),
                   const SizedBox(
                     height: 10,
                   ),
                   Text(
-                    movieModel.date,
+                    movieModel.releaseDate,
                     style: AppTextStyles.interRegular10,
                   ),
                   const SizedBox(

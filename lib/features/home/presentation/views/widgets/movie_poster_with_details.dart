@@ -3,7 +3,7 @@ import 'package:movies_app/core/models/movie_model.dart';
 import 'package:movies_app/core/utils/size_config.dart';
 import 'package:movies_app/core/utils/theme_app.dart';
 import 'package:movies_app/core/widgets/rate_bar.dart';
-import 'package:movies_app/features/home/presentation/views/widgets/movie_poster.dart';
+import 'package:movies_app/core/widgets/movie_poster.dart';
 import 'package:movies_app/features/movie_details/presentation/views/movie_details_view.dart';
 
 class MoviePosterWithDetails extends StatelessWidget {
@@ -43,22 +43,22 @@ class MoviePosterWithDetails extends StatelessWidget {
                   children: [
                     const SizedBox(height: 6),
                     RateBar(
-                      rate: movieModel.rate.toString(),
+                      rate: movieModel.voteAverage.toStringAsFixed(1),
                       starSize: 10,
                     ),
                     const SizedBox(height: 2),
                     Text(
-                      movieModel.name,
+                      movieModel.title,
                       style: AppTextStyles.poppinsRegular10,
                       overflow: TextOverflow.ellipsis,
-                      maxLines: 2,
+                      maxLines: 1,
                     ),
                     const SizedBox(height: 2),
                     Text(
-                      movieModel.date,
+                      movieModel.releaseDate,
                       style: AppTextStyles.interRegular8,
                       overflow: TextOverflow.ellipsis,
-                      maxLines: 2,
+                      maxLines: 1,
                     ),
                     const SizedBox(height: 10),
                   ],
